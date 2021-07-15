@@ -13,21 +13,29 @@ const Card = ({ sign }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   return (
-    <div className="app-card">
-      <img
-        className="app-card-image"
-        src={sign.image}
-        onClick={() =>
-          newArrayDataOfOjbect.forEach((e) => {
-            if (e.nombre === sign.signName) {
-              dispatch(SET_DATA_SIGN(e));
-              history.push("/sign");
+    <>
+      <div className="app-card-container">
+        <div className="app-card">
+          <img
+            className="app-card-image"
+            src={sign.image}
+            onClick={() =>
+              newArrayDataOfOjbect.forEach((e) => {
+                if (e.nombre === sign.signName) {
+                  dispatch(SET_DATA_SIGN(e));
+                  history.push("/sign");
+                }
+              })
             }
-          })
-        }
-        alt="image"
-      />
-    </div>
+            alt="image"
+          />
+        </div>
+
+        <label htmlFor="" className="app-card-label">
+          {sign.signName}
+        </label>
+      </div>
+    </>
   );
 };
 

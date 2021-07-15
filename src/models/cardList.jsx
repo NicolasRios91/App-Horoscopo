@@ -46,11 +46,10 @@ const CardList = () => {
   // if (loading) return null;
 
   return (
-    <div className="app-card-container">
+    <div className="app-cardList-container">
       {imagesArray.map((e) => {
         return <Card key={e.signName} sign={e}></Card>;
       })}
-      ;
     </div>
   );
 };
