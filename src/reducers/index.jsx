@@ -1,6 +1,9 @@
 import { combineReducers } from "redux";
 import dataReducer from "./dataReducer";
-
-const allReducers = combineReducers({ dataReducer: dataReducer });
+import dataSignReducer from "./dataSignReducer";
+const allReducers = combineReducers({
+  dataReducer: dataReducer,
+  dataSignReducer: dataSignReducer,
+});
 
 export default allReducers;

@@ -1,42 +1,23 @@
-import logo from "./logo.svg";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import fecthApi from "./api";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { SET_DATA } from "./actions";
+
 import CardList from "./models/cardList";
+import SignView from "./models/signView";
 
-function App() {
-  const [loading, setLoading] = useState(true);
-  const data = useSelector((state) => state.dataReducer);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    fecthApi()
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-      })
-      .then((dataResponse) => {
-        dispatch(SET_DATA(dataResponse.horoscopo));
-      })
-      .catch((error) => {
-        console.log("error", error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
-  if (loading) return null;
-
+const App = () => {
   return (
-    <div className="App">
-      {console.log(data)}
-      <CardList></CardList>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/sign">
+          <SignView />
+        </Route>
+        <Route path="/">
+          <CardList />
+        </Route>
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
