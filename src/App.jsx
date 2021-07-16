@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import CardList from "./models/cardList";
-import SignView from "./models/signView";
+import SignView from "./views/SignView";
+import CardListView from "./views/CardListView";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
           <SignView />
         </Route>
         <Route path="/">
-          <CardList />
+          <CardListView />
         </Route>
       </Switch>
     </Router>

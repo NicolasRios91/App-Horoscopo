@@ -1,0 +1,66 @@
+.app-signview-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  margin: auto;
+  margin-top: 4%;
+  justify-content: center;
+  margin-bottom: 100px;
+  width: 30%;
+}
+
+.app-signview-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.app-signview-image {
+  width: 90%;
+  height: 90%;
+}
+#app-signview-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#app-signview-description {
+  font-size: 1.1rem;
+}
+
+.app-signview-button,
+.app-signview-ActiveButton {
+  font-size: 1rem;
+  padding: 2%;
+  margin: 1%;
+  cursor: pointer;
+  border: none;
+}
+.app-signview-button:hover {
+  box-shadow: 1px 1px 2px black;
+}
+.app-signview-ActiveButton {
+  transition: 0.5s;
+  background-color: black;
+  color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+  .app-signview-container {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .app-signview-container {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .app-signview-container {
+    width: 76%;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .app-signview-container {
+    width: 100%;
+  }
+}

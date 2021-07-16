@@ -15,20 +15,18 @@ const Card = ({ sign }) => {
   return (
     <>
       <div className="app-card-container">
-        <div className="app-card">
-          <img
-            className="app-card-image"
-            src={sign.image}
-            onClick={() =>
-              newArrayDataOfOjbect.forEach((e) => {
-                if (e.nombre === sign.signName) {
-                  dispatch(SET_DATA_SIGN(e));
-                  history.push("/sign");
-                }
-              })
-            }
-            alt="image"
-          />
+        <div
+          className="app-card"
+          onClick={() =>
+            newArrayDataOfOjbect.forEach((e) => {
+              if (e.nombre === sign.signName) {
+                dispatch(SET_DATA_SIGN(e));
+                history.push("/sign");
+              }
+            })
+          }
+        >
+          <img className="app-card-image" src={sign.image} alt="image" />
         </div>
 
         <label htmlFor="" className="app-card-label">
