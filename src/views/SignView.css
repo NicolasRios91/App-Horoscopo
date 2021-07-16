@@ -9,7 +9,6 @@ body {
   margin: auto;
   box-sizing: border-box;
   justify-content: center;
-  margin-bottom: 20px;
   width: 30%;
 }
 
@@ -25,6 +24,10 @@ body {
 #app-signview-name {
   font-size: 1.5rem;
   font-weight: bold;
+}
+.app-signvire-description-container {
+  padding: 6%;
+  height: 100px;
 }
 #app-signview-description {
   font-size: 1.1rem;
