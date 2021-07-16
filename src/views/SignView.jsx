@@ -16,7 +16,11 @@ const SignView = () => {
     <>
       <div className="app-signview-container">
         <div className="app-signview-image-container">
-          <img className="app-signview-image" src={image[0].signImage} alt="" />
+          <img
+            className="app-signview-image"
+            src={image[0].signImage}
+            alt="zodiac"
+          />
         </div>
         {/* TODO CREATE BUTTON COMPONENT ?? */}
         <p id="app-signview-name">{sign.nombre}</p>
