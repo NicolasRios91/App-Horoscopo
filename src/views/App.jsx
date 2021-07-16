@@ -27,7 +27,7 @@ const App = () => {
           }, 4000);
         });
     }
-  }, []);
+  }, [data, dispatch]);
 
   if (loading) return <Loading />;
 

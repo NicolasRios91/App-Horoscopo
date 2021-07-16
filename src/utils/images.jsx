@@ -12,18 +12,18 @@ import imgAcuario from "./images/acuario.png";
 import imgPiscis from "./images/piscis.png";
 
 const imagesArray = [
-  { signName: "Aries", image: imgAries },
-  { signName: "Tauro", image: imgTauro },
-  { signName: "Géminis", image: imgGeminis },
-  { signName: "Cáncer", image: imgCancer },
-  { signName: "Leo", image: imgLeo },
-  { signName: "Virgo", image: imgVirgo },
-  { signName: "Libra", image: imgLibra },
-  { signName: "Escorpión", image: imgEscorpio },
-  { signName: "Sagitario", image: imgSagitario },
-  { signName: "Capricornio", image: imgCapricornio },
-  { signName: "Acuario", image: imgAcuario },
-  { signName: "Piscis", image: imgPiscis },
+  { signName: "Aries", signImage: imgAries },
+  { signName: "Tauro", signImage: imgTauro },
+  { signName: "Géminis", signImage: imgGeminis },
+  { signName: "Cáncer", signImage: imgCancer },
+  { signName: "Leo", signImage: imgLeo },
+  { signName: "Virgo", signImage: imgVirgo },
+  { signName: "Libra", signImage: imgLibra },
+  { signName: "Escorpión", signImage: imgEscorpio },
+  { signName: "Sagitario", signImage: imgSagitario },
+  { signName: "Capricornio", signImage: imgCapricornio },
+  { signName: "Acuario", signImage: imgAcuario },
+  { signName: "Piscis", signImage: imgPiscis },
 ];
 
 export default imagesArray;

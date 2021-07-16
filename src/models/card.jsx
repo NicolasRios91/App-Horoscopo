@@ -21,7 +21,7 @@ const Card = ({ sign }) => {
             })
           }
         >
-          <img className="app-card-image" src={sign.image} alt="image" />
+          <img className="app-card-image" src={sign.signImage} alt="zodiac" />
         </div>
 
         <label htmlFor="" className="app-card-label">

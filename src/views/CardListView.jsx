@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import FecthApi from "../api";
-import { useSelector } from "react-redux";
+import React from "react";
+
 import CardList from "../models/cardList";
 import "./CardListView.css";
 const CardListView = () => {
