@@ -1,5 +1,4 @@
-body,
-html {
+body {
   margin: 0;
   height: 100%;
 }
@@ -10,11 +9,12 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  min-height: 95vh;
 }
 .app-loading {
   width: 40%;
 }
+/*TODO FIX BACKGROUND SIZE*/
 .app-loading-image {
   opacity: 0;
   width: 100%;
