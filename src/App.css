@@ -67,6 +67,6 @@ body {
 }
 @media only screen and (max-width: 360px) {
   .app-cardList-container {
-    width: 100%;
+    width: 84%;
   }
 }

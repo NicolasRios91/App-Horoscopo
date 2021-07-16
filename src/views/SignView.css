@@ -1,12 +1,15 @@
+body {
+  margin: auto;
+}
 .app-signview-container {
   display: flex;
   flex-direction: column;
   text-align: center;
-
+  padding-top: 4%;
   margin: auto;
-  margin-top: 4%;
+  box-sizing: border-box;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   width: 30%;
 }
 
@@ -16,8 +19,8 @@
   justify-content: center;
 }
 .app-signview-image {
-  width: 90%;
-  height: 90%;
+  width: 60%;
+  height: 60%;
 }
 #app-signview-name {
   font-size: 1.5rem;
