@@ -17,7 +17,7 @@ const CardListView = () => {
           }
         })
         .then((dataResponse) => {
-          dispatch(SET_DATA(dataResponse.horoscopo));
+          dispatch(SET_DATA([Object.values(dataResponse.horoscopo)][0]));
         })
         .catch((error) => {
           console.log("error", error);

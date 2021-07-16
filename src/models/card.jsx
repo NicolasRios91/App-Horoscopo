@@ -5,11 +5,6 @@ import { useSelector } from "react-redux";
 
 const Card = ({ sign }) => {
   const data = useSelector((state) => state.dataReducer);
-  let newArrayDataOfOjbect = [];
-  data
-    ? (newArrayDataOfOjbect = Object.values(data))
-    : (newArrayDataOfOjbect = []);
-
   const history = useHistory();
   const dispatch = useDispatch();
   return (
@@ -18,7 +13,7 @@ const Card = ({ sign }) => {
         <div
           className="app-card"
           onClick={() =>
-            newArrayDataOfOjbect.forEach((e) => {
+            data.forEach((e) => {
               if (e.nombre === sign.signName) {
                 dispatch(SET_DATA_SIGN(e));
                 history.push("/sign");
