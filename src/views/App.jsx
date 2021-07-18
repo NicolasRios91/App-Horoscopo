@@ -7,11 +7,13 @@ import SignView from "./SignView";
 import CardListView from "./CardListView";
 import fecthApi from "../api";
 import { SET_DATA } from "../actions";
+import { selectFetchData } from "./selectors";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const data = useSelector((state) => state.dataReducer);
+  const data = useSelector(selectFetchData);
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (!data) {
       fecthApi()

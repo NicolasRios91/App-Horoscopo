@@ -14,6 +14,5 @@ body {
   background-image: linear-gradient(rgb(255, 255, 255), rgb(149, 149, 185));
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
   background-position: center;
 }

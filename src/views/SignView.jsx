@@ -1,12 +1,13 @@
 import "./SignView.css";
 
-import { useSelector } from "react-redux";
+import { useSelector, shallowEqual } from "react-redux";
 import React, { useState } from "react";
 import imagesArray from "../utils/images";
 import { useHistory } from "react-router-dom";
+import { selectSelectedSign } from "./selectors";
 
 const SignView = () => {
-  const sign = useSelector((state) => state.dataSignReducer);
+  const sign = useSelector(selectSelectedSign, shallowEqual);
   const [isClicked, setIsClicked] = useState(0);
   const history = useHistory();
   const [value, setValue] = useState(sign.amor);
@@ -46,6 +47,7 @@ const SignView = () => {
                 : "app-signview-button"
             }
             onClick={() => {
+              //TODO set tab setSelectedTab
               setValue(sign.dinero);
               setIsClicked(1);
             }}
