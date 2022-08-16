@@ -1,6 +1,6 @@
 import React from "react";
 
-import CardList from "../models/cardList";
+import CardList from "../../models/cardList";
 import "./CardListView.css";
 const CardListView = () => {
   //TODO use effect in carlistView??

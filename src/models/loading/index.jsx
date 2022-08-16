@@ -1,4 +1,4 @@
-import zodiakImg from "../utils/images/Zodiak.png";
+import zodiakImg from "../../utils/images/Zodiak.png";
 import "./loading.css";
 const Loading = () => {
   return (

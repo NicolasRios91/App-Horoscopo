@@ -7,13 +7,16 @@ const Card = ({ sign }) => {
   const data = useSelector((state) => state.dataReducer);
   const history = useHistory();
   const dispatch = useDispatch();
+  if(!data?.length){
+    return null
+  }
   return (
     <>
       <div className="app-card-container">
         <div
           className="app-card"
           onClick={() =>
-            data.forEach((e) => {
+            data?.forEach((e) => {
               if (e.nombre === sign.signName) {
                 dispatch(SET_DATA_SIGN(e));
                 history.push("/sign");

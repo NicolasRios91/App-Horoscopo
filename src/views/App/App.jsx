@@ -1,13 +1,13 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import Loading from "../models/loading";
+import Loading from "../../models/loading";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import SignView from "./SignView";
-import CardListView from "./CardListView";
-import fecthApi from "../api";
-import { SET_DATA } from "../actions";
-import { selectFetchData } from "./selectors";
+import SignView from "../Sign";
+import CardListView from "../CardList";
+import fecthApi from "../../api";
+import { SET_DATA } from "../../actions";
+import { selectFetchData } from "../../selectors";
 
 const App = () => {
   const [loading, setLoading] = useState(true);

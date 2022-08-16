@@ -2,9 +2,9 @@ import "./SignView.css";
 
 import { useSelector, shallowEqual } from "react-redux";
 import React, { useState } from "react";
-import imagesArray from "../utils/images";
+import imagesArray from "../../utils/images";
 import { useHistory } from "react-router-dom";
-import { selectSelectedSign } from "./selectors";
+import { selectSelectedSign } from "../../selectors";
 
 const SignView = () => {
   const sign = useSelector(selectSelectedSign, shallowEqual);
