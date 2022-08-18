@@ -10,8 +10,8 @@ const SignView = () => {
   const sign = useSelector(selectSelectedSign, shallowEqual);
   const [isClicked, setIsClicked] = useState(0);
   const history = useHistory();
-  const [value, setValue] = useState(sign.amor);
-  const image = imagesArray.filter((e) => e.signName === sign.nombre);
+  const [value, setValue] = useState(sign?.description);
+  const image = imagesArray.filter((e) => e.signName === sign?.sign);
 
   return (
     <>
@@ -24,7 +24,7 @@ const SignView = () => {
           />
         </div>
         {/* TODO CREATE BUTTON COMPONENT ?? */}
-        <p id="app-signview-name">{sign.nombre}</p>
+        <p id="app-signview-name">{sign?.sign}</p>
         <div className="app-signview-button-container">
           <button
             className={
@@ -33,11 +33,11 @@ const SignView = () => {
                 : "app-signview-button"
             }
             onClick={() => {
-              setValue(sign.amor);
+              setValue(sign.description);
               setIsClicked(0);
             }}
           >
-            Amor
+            Daily
           </button>
 
           <button
@@ -48,11 +48,11 @@ const SignView = () => {
             }
             onClick={() => {
               //TODO set tab setSelectedTab
-              setValue(sign.dinero);
+              setValue(`Your mood for today: ${sign.mood}`);
               setIsClicked(1);
             }}
           >
-            Dinero
+            Mood
           </button>
 
           <button
@@ -62,11 +62,11 @@ const SignView = () => {
                 : "app-signview-button"
             }
             onClick={() => {
-              setValue(sign.salud);
+              setValue(`Today's match: ${sign.compatibility}`);
               setIsClicked(2);
             }}
           >
-            Salud
+            Matches
           </button>
         </div>
         <div className="app-signvire-description-container">
@@ -77,7 +77,7 @@ const SignView = () => {
             className="app-signview-button"
             onClick={() => history.push("/")}
           >
-            Volver
+            Back
           </button>
         </div>
       </div>

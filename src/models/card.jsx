@@ -7,8 +7,8 @@ const Card = ({ sign }) => {
   const data = useSelector((state) => state.dataReducer);
   const history = useHistory();
   const dispatch = useDispatch();
-  if(!data?.length){
-    return null
+  if (!data?.length) {
+    return null;
   }
   return (
     <>
@@ -16,8 +16,9 @@ const Card = ({ sign }) => {
         <div
           className="app-card"
           onClick={() =>
+            // todo use handler function
             data?.forEach((e) => {
-              if (e.nombre === sign.signName) {
+              if (e.sign === sign.signName) {
                 dispatch(SET_DATA_SIGN(e));
                 history.push("/sign");
               }

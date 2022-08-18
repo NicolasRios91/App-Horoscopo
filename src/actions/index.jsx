@@ -1,7 +1,4 @@
 export const SET_DATA = (dataResponse) => {
-  dataResponse.forEach((e) => {
-    e.salud = e.salud.split(".")[0];
-  });
   return {
     type: "SET_DATA",
     payload: dataResponse,

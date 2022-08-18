@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import SignView from "../Sign";
 import CardListView from "../CardList";
-import fecthApi from "../../api";
+import { fetchAllSigns } from "../../api";
 import { SET_DATA } from "../../actions";
 import { selectFetchData } from "../../selectors";
 
@@ -15,19 +15,22 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    let fetchedData;
     if (!data) {
-      fecthApi()
-        .then((dataResponse) => {
-          dispatch(SET_DATA([Object.values(dataResponse.horoscopo)][0]));
-        })
-        .catch((error) => {
-          console.log("error", error);
-        })
-        .finally(() => {
-          setTimeout(() => {
-            setLoading(false);
-          }, 4000);
-        });
+      try {
+        (async function () {
+          fetchedData = await fetchAllSigns();
+        })();
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        setTimeout(() => {
+          setLoading(false);
+          if (fetchedData.length) {
+            dispatch(SET_DATA(fetchedData));
+          }
+        }, 4000);
+      }
     }
   }, [data, dispatch]);
 

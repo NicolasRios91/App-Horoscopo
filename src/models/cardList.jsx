@@ -5,8 +5,8 @@ import imagesArray from "../utils/images";
 const CardList = () => {
   return (
     <div className="app-cardList-container">
-      {imagesArray.map((e) => {
-        return <Card key={e.signName} sign={e}></Card>;
+      {imagesArray.map((sign) => {
+        return <Card key={sign.signName} sign={sign}></Card>;
       })}
     </div>
   );

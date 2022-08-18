@@ -28,7 +28,7 @@ body {
 }
 .app-signvire-description-container {
   padding: 6%;
-  height: 100px;
+  height: auto;
 }
 #app-signview-description {
   font-size: 1.1rem;
