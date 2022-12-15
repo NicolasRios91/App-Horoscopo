@@ -5,11 +5,6 @@ import CardList from "../../models/cardList";
 import "./CardListView.css";
 const CardListView = () => {
   const data = useSelector(selectFetchData, shallowEqual);
-  //TODO use effect in carlistView??
-  // const data = useSelector((state) => state.dataReducer);
-  // !data ? FecthApi() : void 0; //WTF?????
-
-  console.log("la data", data);
 
   return (
     <>

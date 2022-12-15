@@ -15,20 +15,19 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let fetchedData;
     if (!data) {
+      let fetchedData;
       try {
-        (async function () {
+        const getData = async () => {
           fetchedData = await fetchAllSigns();
-        })();
+          dispatch(SET_DATA(fetchedData));
+        };
+        getData();
       } catch (error) {
         console.log("error", error);
       } finally {
         setTimeout(() => {
           setLoading(false);
-          if (fetchedData.length) {
-            dispatch(SET_DATA(fetchedData));
-          }
         }, 4000);
       }
     }
