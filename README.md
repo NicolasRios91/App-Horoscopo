@@ -2,7 +2,7 @@
 
 ## technologies used
 
-*ReactJs
-*Javascript
-*Redux (redux toolkit and redux Saga)
-*CSS
+- ReactJs
+- Javascript
+- Redux (redux toolkit and redux Saga)
+- CSS
