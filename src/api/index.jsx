@@ -1,4 +1,4 @@
-import { signs } from "../utils/images/constants";
+import { SIGNS } from "../utils/constants";
 
 const options = {
   method: "POST",
@@ -9,22 +9,16 @@ const options = {
 };
 
 export const fetchSign = async (sign) => {
+  const { signImage, signName } = SIGNS.find((e) => e.signName === sign);
   const response = await fetch(
     `https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=today`,
     options
   );
   const parsedResponse = await response.json();
-  return parsedResponse;
+  return { signName, signImage, ...parsedResponse };
 };
 
 export const fetchAllSigns = async () => {
-  let allSigns = [];
-  (async function () {
-    signs.forEach(async (sign) => {
-      const dataResponse = await fetchSign(sign);
-      const editedResponse = { sign: sign, ...dataResponse };
-      allSigns.push(editedResponse);
-    });
-  })();
-  return allSigns;
+  const response = await Promise.all(SIGNS.map((e) => fetchSign(e.signName)));
+  return response;
 };
