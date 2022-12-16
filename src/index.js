@@ -3,14 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./views/App/App";
 import reportWebVitals from "./reportWebVitals";
-import { createStore } from "redux";
 import { Provider } from "react-redux";
-import allReducers from "./reducers";
+import HoroscopeSaga from "./saga";
+import { saga } from "./store";
+import { store } from "./store";
 
-let store = createStore(
-  allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+saga.run(HoroscopeSaga);
 
 ReactDOM.render(
   <Provider store={store}>
