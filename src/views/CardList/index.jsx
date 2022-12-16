@@ -1,10 +1,11 @@
 import React from "react";
 import { shallowEqual, useSelector } from "react-redux";
-import { selectFetchData } from "../../selectors";
-import CardList from "../../models/cardList";
+import { selectHoroscopeData } from "../../selectors";
+import { Card } from "../../models/card";
 import "./CardListView.css";
+
 const CardListView = () => {
-  const data = useSelector(selectFetchData, shallowEqual);
+  const data = useSelector(selectHoroscopeData, shallowEqual);
 
   return (
     <>
@@ -12,7 +13,11 @@ const CardListView = () => {
         <h1>HOROSCOPES</h1>
       </header>
       {data?.length ? (
-        <CardList />
+        <div className="app-cardList-container">
+          {data.map((sign) => (
+            <Card key={sign.signName} sign={sign}></Card>
+          ))}
+        </div>
       ) : (
         <h3 style={{ textAlign: "center" }}>Sorry, try again later</h3>
       )}
