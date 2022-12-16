@@ -1,2 +1,8 @@
 # App-Horoscopo developed on Reactjs
-## currently not working due to deprecated API
+
+## technologies used
+
+ReactJs
+Javascript
+Redux (redux toolkit and redux Saga)
+CSS
