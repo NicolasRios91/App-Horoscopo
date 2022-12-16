@@ -4,12 +4,18 @@ import { useSelector, shallowEqual } from "react-redux";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { selectSelectedSign } from "../../selectors";
+import { EmptySign } from "../../models/no-sign-selected";
 import { OPTIONS } from "../../utils/constants";
 
 const SignView = () => {
   const sign = useSelector(selectSelectedSign, shallowEqual);
   const [selectedOption, setSelectedOption] = useState(OPTIONS[0].value);
   const history = useHistory();
+
+  //todo try to use more functional components
+  if (!sign) {
+    return <EmptySign />;
+  }
 
   return (
     <>

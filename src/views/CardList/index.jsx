@@ -1,11 +1,24 @@
-import React from "react";
-import { shallowEqual, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import { selectHoroscopeData } from "../../selectors";
 import { Card } from "../../models/card";
 import "./CardListView.css";
+import { selectIsLoading } from "../../selectors";
+import { getHoroscopeFetch } from "../../features/horoscope";
+import Loading from "../../models/loading";
 
 const CardListView = () => {
   const data = useSelector(selectHoroscopeData, shallowEqual);
+  const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!data) {
+      dispatch(getHoroscopeFetch());
+    }
+  }, [data, dispatch]);
+
+  if (isLoading) return <Loading />;
 
   return (
     <>
